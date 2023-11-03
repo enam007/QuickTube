@@ -17,14 +17,12 @@ def get_Summary(url):
     ### first Iteration
     data_summary = utils.sample_data(df,10,"text")
     #start = df.loc[0, 'start_time']
-    print("sttttttttttttttttttttttttttttttttttttttttttttttttt",start)
     if start.time().minute>0:
         data_summary.at[0, 'start'] = start
     text_data = data_summary['text'].tolist()
     summary = model.createSummary(text_data)
     data_summary['summary'] = summary
-    print("Columnssssssss",data_summary.columns)
-
+    
    
     ## 2nd Iteration
     data_summary_copy = data_summary.copy()
@@ -33,10 +31,8 @@ def get_Summary(url):
     print("Columnssssssssafterindex",data_summary.columns)
     data_overview = utils.sample_data(data_summary,60,"summary")
     summary_data = data_overview['summary'].tolist()
-    # print("===================================",data.itertuples())
     overview = model.createSummary(summary_data)
     data_overview['overview'] = overview
-    print("Columnsssssssso",data_overview.columns)
     merged_df = utils.mergeDf(data_summary_copy,data_overview)
     data = utils.makeJson(merged_df) 
     return data
