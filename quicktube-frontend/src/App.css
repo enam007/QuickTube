@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid pink;
+  /* display: flex; */
+}
+
+.video-card {
+  padding: 10px;
+  width: 560px;
+  height: 315px;
+}
+
+.summary-card {
+  padding: 10px;
+  border-bottom: 2px solid pink;
+}
+
+.overview-card {
+  width: 640px;
+  height: 370px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+.snippets {
+  border-bottom: 1px solid pink;
+  padding: 10px;
+}
+
+.search {
+  text-align: center;
+  padding: 10px;
+  margin: 15px;
+  width: 100%;
+}
+.search-txt {
+  padding: 10px;
+  margin: 15px;
+  width: 100%;
+}
+.txt-container {
+  display: flex;
+  flex-flow: column;
+}
+
+input {
+  width: 50%;
+  height: 28px;
+  border-radius: 8px;
+}
+
+.btn-summary {
+}
